@@ -13,3 +13,22 @@
 
 # Ignore DDEV local overrides
 .ddev/config.local.yaml
+
+#env vars
+.env
+.environment 
+
+#database files
+db*
+*.sql
+*.sqlite
+*.db
+*.dump
+.ddev/db_snapshots/
+.tarballs/
+
+# Platform.sh / Upsun CLI generated db files
+project.sql
+dump.sql
+*.sql.gz
+*.sql.bz2
