@@ -11,7 +11,9 @@ $platformsh = new \Platformsh\ConfigReader\Config();
 // This is defined inside the read-only "config" directory, deployed via Git.
 $settings['config_sync_directory'] = '../config/sync';
 
-
+if (isset($class_loader)) {
+    $class_loader->addPsr4('Drupal\\mysql\\', $app_root . '/core/modules/mysql/src');
+}
 // Configure the database.
 if ($platformsh->hasRelationship('mariadb')) {
   $creds = $platformsh->credentials('mariadb');
