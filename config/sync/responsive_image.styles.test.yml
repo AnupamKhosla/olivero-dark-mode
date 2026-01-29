@@ -1,0 +1,24 @@
+uuid: 69c6270c-1169-41cc-a977-5d2e3ee88e7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.max_650x650
+    - image.style.wide
+  theme:
+    - olivero
+id: test
+label: Test
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: wide
+    breakpoint_id: olivero.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: max_650x650
+    breakpoint_id: olivero.sm
+    multiplier: 1x
+breakpoint_group: olivero
+fallback_image_style: wide

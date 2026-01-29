@@ -1,0 +1,80 @@
+uuid: 83fcaa99-7ca6-420f-9df7-bb83d22f6c4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vendor.field_countryoriginataxonomyterm
+    - field.field.node.vendor.field_recepie
+    - field.field.node.vendor.field_vendor_name
+    - field.field.node.vendor.field_vendorimage
+    - field.field.node.vendor.field_vendorsite
+    - node.type.vendor
+  module:
+    - image
+    - layout_builder
+    - link
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.vendor.teaser
+targetEntityType: node
+bundle: vendor
+mode: teaser
+content:
+  field_countryoriginataxonomyterm:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_recepie:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_vendor_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_vendorimage:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_vendorsite:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

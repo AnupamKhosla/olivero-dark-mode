@@ -1,0 +1,21 @@
+uuid: d6d02911-b289-4ea2-8642-4533ca28d9e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - tailwindcss
+id: tailwindcss_searchform
+theme: tailwindcss
+region: sidebar_first
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: visible
+  provider: search
+  page_id: null
+visibility: {  }

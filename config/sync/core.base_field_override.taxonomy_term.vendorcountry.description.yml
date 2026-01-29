@@ -1,0 +1,21 @@
+uuid: 33a149a8-31d6-4803-82ba-e708f9918a08
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vendorcountry
+  module:
+    - text
+id: taxonomy_term.vendorcountry.description
+field_name: description
+entity_type: taxonomy_term
+bundle: vendorcountry
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

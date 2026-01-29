@@ -1,0 +1,20 @@
+uuid: 2e898671-9d9f-4b36-b118-83c586c07e60
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ln_theme
+id: ln_theme_clearcache
+theme: ln_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: system_clear_cache_block
+settings:
+  id: system_clear_cache_block
+  label: 'Clear cache'
+  label_display: visible
+  provider: system
+visibility: {  }

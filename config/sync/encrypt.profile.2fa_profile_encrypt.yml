@@ -1,0 +1,13 @@
+uuid: ed1509a4-de6d-47e4-8b7c-3e92b44e6dec
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.tfa_encryption_key
+  module:
+    - sodium
+id: 2fa_profile_encrypt
+label: '2fa profile encrypt'
+encryption_method: sodium
+encryption_method_configuration: {  }
+encryption_key: tfa_encryption_key

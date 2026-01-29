@@ -1,0 +1,11 @@
+type: module
+name: 'Antispam by CleanTalk'
+description: 'Antispam service from <a target="_blank" href="https://cleantalk.org">CleanTalk</a> to protect your site'
+package: CleanTalk
+configure: cleantalk.settings
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
+
+# Information added by Drupal.org packaging script on 2025-04-30
+version: '9.6.1'
+project: 'cleantalk'
+datestamp: 1746014247

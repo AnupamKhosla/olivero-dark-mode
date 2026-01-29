@@ -1,0 +1,25 @@
+uuid: 53773581-5178-409c-8606-aa5b822f8813
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.test-menu
+  module:
+    - system
+  theme:
+    - tailwindcss
+id: tailwindcss_testmenu
+theme: tailwindcss
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:test-menu'
+settings:
+  id: 'system_menu_block:test-menu'
+  label: 'Test Menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 22db1c37-878e-4e08-b2f5-db729738c44c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - tailwindcss
+id: tailwindcss_useraccountmenu
+theme: tailwindcss
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

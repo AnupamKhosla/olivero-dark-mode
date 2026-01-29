@@ -1,0 +1,18 @@
+label: 'ٹیکسانمی ٹرم'
+display:
+  default:
+    display_title: 'طے شدہ'
+    display_options:
+      pager:
+        options:
+          tags:
+            next: ‹‹
+            previous: ››
+      exposed_form:
+        options:
+          reset_button_label: 'دوبارہ ترتیب دیں'
+          exposed_sorts_label: 'کی طرف سے  کی گئی مرتب سازی'
+  feed_1:
+    display_title: فیڈ
+  page_1:
+    display_title: صفحہ

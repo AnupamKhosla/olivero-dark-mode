@@ -1,0 +1,19 @@
+uuid: c0860e4f-1be8-4242-9bd6-dac959d3bb27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recepie
+    - node.type.vendor
+id: node.vendor.field_recepie
+field_name: field_recepie
+entity_type: node
+bundle: vendor
+label: Recepie
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

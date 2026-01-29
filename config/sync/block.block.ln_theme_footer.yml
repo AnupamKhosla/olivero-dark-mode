@@ -1,0 +1,25 @@
+uuid: 4329b472-5fd4-462f-9e0f-852d9f84a45c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - ln_theme
+id: ln_theme_footer
+theme: ln_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

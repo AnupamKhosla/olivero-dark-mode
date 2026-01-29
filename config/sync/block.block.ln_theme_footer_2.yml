@@ -1,0 +1,33 @@
+uuid: be7918e9-e757-4e0d-8c90-e42216821f6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - node
+    - system
+  theme:
+    - ln_theme
+id: ln_theme_footer_2
+theme: ln_theme
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

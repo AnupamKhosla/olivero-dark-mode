@@ -1,0 +1,18 @@
+uuid: 9de6ee45-e822-42ee-b9e0-04b906a4a9af
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vendor_opening_timings
+id: block_content.vendor_opening_timings.info
+field_name: info
+entity_type: block_content
+bundle: vendor_opening_timings
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

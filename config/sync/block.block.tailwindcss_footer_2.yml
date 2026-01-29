@@ -1,0 +1,33 @@
+uuid: 012eddd9-3e98-412c-a359-c3f7fcaef2b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - node
+    - system
+  theme:
+    - tailwindcss
+id: tailwindcss_footer_2
+theme: tailwindcss
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

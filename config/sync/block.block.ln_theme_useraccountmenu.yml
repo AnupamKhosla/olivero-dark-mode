@@ -1,0 +1,25 @@
+uuid: 5679dfc8-f7e8-42c9-bf6c-e3d5585c1a2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - ln_theme
+id: ln_theme_useraccountmenu
+theme: ln_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,7 @@
+uuid: d1058679-42ed-4490-a3db-2c1a5669e41f
+langcode: en
+status: false
+dependencies: {  }
+formId: views_form_user_admin_people_page_1
+captchaType: captcha/Math
+label: views_form_user_admin_people_page_1

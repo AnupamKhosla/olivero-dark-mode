@@ -1,0 +1,20 @@
+uuid: d0f54def-1426-431c-b92b-15d571b65407
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - olivero
+id: olivero_userlogin_2
+theme: olivero
+region: hero2
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: visible
+  provider: user
+visibility: {  }

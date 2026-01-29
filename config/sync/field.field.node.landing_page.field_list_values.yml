@@ -1,0 +1,21 @@
+uuid: 79e278fa-57a0-40bb-b14a-ec6fe7c8d3b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_values
+    - node.type.landing_page
+  module:
+    - options
+id: node.landing_page.field_list_values
+field_name: field_list_values
+entity_type: node
+bundle: landing_page
+label: List_values
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

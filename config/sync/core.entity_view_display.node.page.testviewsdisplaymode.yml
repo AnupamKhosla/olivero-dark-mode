@@ -1,0 +1,35 @@
+uuid: 27dcfa89-c0af-466a-894f-c7730f9bc95e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.testviewsdisplaymode
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.testviewsdisplaymode
+targetEntityType: node
+bundle: page
+mode: testviewsdisplaymode
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    weight: 101
+    region: content
+hidden:
+  langcode: true

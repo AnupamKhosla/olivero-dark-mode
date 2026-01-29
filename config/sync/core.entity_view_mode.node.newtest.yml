@@ -1,0 +1,11 @@
+uuid: 40003a5b-8f64-4d7c-a18d-110bd9a4dc3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.newtest
+label: NewTest
+description: null
+targetEntityType: node
+cache: true

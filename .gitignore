@@ -1,10 +1,10 @@
 # Ignore core and vendor
-/vendor/
-/web/core/
-/web/modules/contrib/
-/web/themes/contrib/
-/web/profiles/contrib/
-/web/libraries/
+# /vendor/
+# /web/core/
+# /web/modules/contrib/
+# /web/themes/contrib/
+# /web/profiles/contrib/
+# /web/libraries/
 
 # Ignore site-specific files
 /web/sites/*/settings.local.php

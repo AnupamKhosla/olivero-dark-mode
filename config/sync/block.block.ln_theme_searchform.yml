@@ -1,0 +1,21 @@
+uuid: 943f2c6b-bf2e-4173-a973-16cffcd8e16b
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - ln_theme
+id: ln_theme_searchform
+theme: ln_theme
+region: hero2
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: visible
+  provider: search
+  page_id: null
+visibility: {  }

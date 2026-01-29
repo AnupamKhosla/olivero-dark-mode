@@ -1,0 +1,18 @@
+uuid: 4371d6df-2b5a-4419-9174-eeb95c87a5d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Vendor
+type: vendor
+description: 'Seller the vendor of grocery items'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

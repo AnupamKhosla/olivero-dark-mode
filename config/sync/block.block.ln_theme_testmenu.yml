@@ -1,0 +1,25 @@
+uuid: e1bcb305-db48-4ad5-b1b3-25d824fa4016
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.test-menu
+  module:
+    - system
+  theme:
+    - ln_theme
+id: ln_theme_testmenu
+theme: ln_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:test-menu'
+settings:
+  id: 'system_menu_block:test-menu'
+  label: 'Test Menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

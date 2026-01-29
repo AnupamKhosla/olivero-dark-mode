@@ -1,0 +1,19 @@
+uuid: 2a4cfe3f-c694-403c-af65-53b0c4808601
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vendor_name
+    - node.type.vendor
+id: node.vendor.field_vendor_name
+field_name: field_vendor_name
+entity_type: node
+bundle: vendor
+label: 'Vendor Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

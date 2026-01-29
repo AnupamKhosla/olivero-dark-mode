@@ -1,0 +1,29 @@
+uuid: 2d467458-e79d-4db3-a4b3-57bc9896334c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_countryoriginataxonomyterm
+    - node.type.vendor
+    - taxonomy.vocabulary.vendorcountry
+id: node.vendor.field_countryoriginataxonomyterm
+field_name: field_countryoriginataxonomyterm
+entity_type: node
+bundle: vendor
+label: CountryOriginaTaxonomyTerm
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vendorcountry: vendorcountry
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: tags
+field_type: entity_reference

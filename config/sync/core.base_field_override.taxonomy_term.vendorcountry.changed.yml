@@ -1,0 +1,18 @@
+uuid: c6a591ed-a629-41f8-9e04-5ab414cc028c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vendorcountry
+id: taxonomy_term.vendorcountry.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: vendorcountry
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,50 @@
+label: متن
+display:
+  default:
+    display_title: 'طے شدہ'
+    display_options:
+      title: متن
+      fields:
+        title:
+          label: عنوان
+        name:
+          label: مصنف
+        status:
+          label: حالت
+          settings:
+            format_custom_true: 'شائع شدہ'
+        langcode:
+          label: زبان
+        operations:
+          label: معاملات
+      pager:
+        options:
+          tags:
+            previous: '› گزشتہ'
+            first: '» ابتدائی'
+      exposed_form:
+        options:
+          submit_button: فلٹر
+          reset_button_label: 'دوبارہ ترتیب دیں'
+          exposed_sorts_label: 'کی طرف سے  کی گئی مرتب سازی'
+      filters:
+        title:
+          expose:
+            label: عنوان
+        status:
+          expose:
+            label: حالت
+          group_info:
+            group_items:
+              1:
+                title: 'شائع شدہ'
+        langcode:
+          expose:
+            label: زبان
+  page_1:
+    display_title: صفحہ
+    display_options:
+      menu:
+        title: متن
+      tab_options:
+        title: متن

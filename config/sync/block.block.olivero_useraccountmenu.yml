@@ -1,0 +1,25 @@
+uuid: cb0a08c5-0d19-4d8a-b085-28961a30985e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - olivero
+id: olivero_useraccountmenu
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

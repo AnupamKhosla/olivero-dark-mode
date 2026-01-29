@@ -1,0 +1,27 @@
+uuid: 271d5af9-4600-4058-a9bc-15a7c2ab831b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_list_values
+field_name: field_list_values
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 1
+      label: 'Description Title'
+    -
+      value: 2
+      label: Ttiel2
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

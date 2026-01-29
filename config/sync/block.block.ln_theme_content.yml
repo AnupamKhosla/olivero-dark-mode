@@ -1,0 +1,22 @@
+uuid: a2c6e8f3-7061-4df2-9e0c-4518e5ace549
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ln_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: ln_theme_content
+theme: ln_theme
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

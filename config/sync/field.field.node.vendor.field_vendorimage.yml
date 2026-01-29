@@ -1,0 +1,38 @@
+uuid: ef3abd6f-1f34-41ff-8277-230fcf80e443
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vendorimage
+    - node.type.vendor
+  module:
+    - image
+id: node.vendor.field_vendorimage
+field_name: field_vendorimage
+entity_type: node
+bundle: vendor
+label: VendorImage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

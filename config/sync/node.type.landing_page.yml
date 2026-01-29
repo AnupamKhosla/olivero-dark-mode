@@ -1,0 +1,19 @@
+uuid: 184e1c4e-d2da-488d-9a30-6b2269e73aad
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: 'Landing Page'
+type: landing_page
+description: 'This is the defualt landing page of main www.drupalsite.com'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

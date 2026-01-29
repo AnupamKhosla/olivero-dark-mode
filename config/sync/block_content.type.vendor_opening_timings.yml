@@ -1,0 +1,8 @@
+uuid: 1246a61c-714f-4cd6-aace-4951fbfcb682
+langcode: en
+status: true
+dependencies: {  }
+id: vendor_opening_timings
+label: 'Vendor opening Timings'
+revision: false
+description: 'This will show the time the vendor shop is open'

@@ -1,0 +1,37 @@
+display:
+  default:
+    display_title: 'طے شدہ'
+    display_options:
+      fields:
+        nothing:
+          admin_label: آئیکن
+        type:
+          label: قِسم
+        timestamp:
+          label: تاریخ
+        message:
+          label: پیغام
+        name:
+          label: صارف
+        link:
+          label: معاملات
+      pager:
+        options:
+          tags:
+            next: ‹‹
+            previous: ››
+      exposed_form:
+        options:
+          submit_button: فلٹر
+          reset_button_label: 'دوبارہ ترتیب دیں'
+          exposed_sorts_label: 'کی طرف سے  کی گئی مرتب سازی'
+      empty:
+        area:
+          admin_label: 'کوئ لاگ پیغامات موجود نہیں۔'
+          content: 'کوئ لاگ پیغامات موجود نہیں۔'
+      filters:
+        type:
+          expose:
+            label: قِسم
+  page:
+    display_title: صفحہ

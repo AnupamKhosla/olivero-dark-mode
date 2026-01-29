@@ -1,0 +1,23 @@
+uuid: 5a6f4ac0-4376-4b02-a412-b7e48bbf03fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vendor
+  module:
+    - node
+    - shortcut
+    - system
+    - toolbar
+id: vendor
+label: Vendor
+weight: 4
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create vendor content'
+  - 'delete own vendor content'
+  - 'edit own vendor content'
+  - 'switch shortcut sets'

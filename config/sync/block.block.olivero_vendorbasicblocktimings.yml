@@ -1,0 +1,31 @@
+uuid: 0ba67878-ba38-4c97-b0be-bfdc71bf5e77
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2fdbc8ef-110c-415f-ae8f-479596c43439'
+  module:
+    - block_content
+    - node
+  theme:
+    - olivero
+id: olivero_vendorbasicblocktimings
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:2fdbc8ef-110c-415f-ae8f-479596c43439'
+settings:
+  id: 'block_content:2fdbc8ef-110c-415f-ae8f-479596c43439'
+  label: 'Vendor Basic block timings'
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      vendor: vendor

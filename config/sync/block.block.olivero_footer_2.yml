@@ -1,0 +1,33 @@
+uuid: a8cc9274-c7ce-448c-b4ee-4b15bf8b34cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - node
+    - system
+  theme:
+    - olivero
+id: olivero_footer_2
+theme: olivero
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

@@ -1,0 +1,8 @@
+description: Urdu
+display:
+  default:
+    display_title: DefaultUrud
+    display_options:
+      title: testNodeUrdu
+  page_1:
+    display_title: PageUrdu

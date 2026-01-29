@@ -1,0 +1,18 @@
+uuid: e74d822d-24b9-4b8e-900f-b28c1f40956f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vendor_opening_timings
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.vendor_opening_timings
+target_entity_type_id: block_content
+target_bundle: vendor_opening_timings
+default_langcode: site_default
+language_alterable: false

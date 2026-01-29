@@ -1,0 +1,18 @@
+uuid: e2c349c5-7e19-48c9-8a91-c11424fbe520
+langcode: en
+status: true
+dependencies:
+  config:
+    - shortcut.set.honeylabels
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: shortcut.honeylabels
+target_entity_type_id: shortcut
+target_bundle: honeylabels
+default_langcode: site_default
+language_alterable: false

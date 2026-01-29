@@ -1,0 +1,18 @@
+uuid: 9050ac9e-72b1-495d-bb6a-442d6f1d661d
+langcode: en
+status: true
+dependencies:
+  config:
+    - shortcut.set.honeylabels
+id: shortcut.honeylabels.title
+field_name: title
+entity_type: shortcut
+bundle: honeylabels
+label: Name
+description: 'The name of the shortcut.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

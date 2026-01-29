@@ -1,0 +1,20 @@
+uuid: 254e6e25-f322-4fbc-a322-42823c239870
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tailwindcss
+id: tailwindcss_clearcache
+theme: tailwindcss
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_clear_cache_block
+settings:
+  id: system_clear_cache_block
+  label: 'Clear cache'
+  label_display: visible
+  provider: system
+visibility: {  }

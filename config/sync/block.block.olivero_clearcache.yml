@@ -1,0 +1,20 @@
+uuid: d3d98725-fb51-4822-820a-7fd27cc1a622
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+id: olivero_clearcache
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: system_clear_cache_block
+settings:
+  id: system_clear_cache_block
+  label: 'Clear cache'
+  label_display: visible
+  provider: system
+visibility: {  }

@@ -1,0 +1,18 @@
+uuid: 730b9678-4bc9-44f2-9d6c-89d5a706318c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vendor_opening_timings
+id: block_content.vendor_opening_timings.changed
+field_name: changed
+entity_type: block_content
+bundle: vendor_opening_timings
+label: Changed
+description: 'The time that the content block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

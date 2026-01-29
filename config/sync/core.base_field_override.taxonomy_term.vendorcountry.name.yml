@@ -1,0 +1,18 @@
+uuid: 3d3edb2d-2d1d-4f97-bf28-bf2d39435378
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vendorcountry
+id: taxonomy_term.vendorcountry.name
+field_name: name
+entity_type: taxonomy_term
+bundle: vendorcountry
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

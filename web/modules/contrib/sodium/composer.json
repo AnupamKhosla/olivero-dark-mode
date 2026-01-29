@@ -1,0 +1,13 @@
+{
+  "name": "drupal/sodium",
+  "description": "Allows data to be encrypted and decrypted using Libsodium.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/sodium",
+  "require": {
+    "php": ">=8.1",
+    "drupal/key": "^1.0",
+    "drupal/encrypt": "^3.2",
+    "paragonie/halite": "^5.1"
+  }
+}

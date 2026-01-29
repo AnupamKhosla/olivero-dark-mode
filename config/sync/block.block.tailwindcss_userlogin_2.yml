@@ -1,0 +1,20 @@
+uuid: 0ab93d81-1b7f-4169-8f12-8ea6560d464b
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - tailwindcss
+id: tailwindcss_userlogin_2
+theme: tailwindcss
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: visible
+  provider: user
+visibility: {  }

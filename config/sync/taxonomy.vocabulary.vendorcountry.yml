@@ -1,0 +1,9 @@
+uuid: 6d4f017e-eba1-4d55-b11c-52d21f9dfbed
+langcode: en
+status: true
+dependencies: {  }
+name: VendorCountry
+vid: vendorcountry
+description: 'Country origin of vendor'
+weight: 0
+new_revision: false

@@ -1,0 +1,11 @@
+uuid: 3335ed08-0552-4bd9-95ad-00c3fc44816d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.testviewsdisplaymode
+label: TestViewsDisplayMode
+description: null
+targetEntityType: node
+cache: true

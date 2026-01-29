@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Defines installation functions for Sodium.
+ */
+
+/**
+ * Implements hook_requirements().
+ *
+ * Verifies that module requirements are met.
+ */
+function sodium_requirements(string $phase): array {
+  $requirements = [];
+
+  if ($phase === 'install') {
+    // Verify that the Halite PHP library is available.
+    if (!class_exists('\ParagonIE\Halite\Halite')) {
+      $requirements['halite_library'] = [
+        'description' => t('Sodium requires the Halite PHP library.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+
+    if (!empty($requirements)) {
+      $requirements['sodium_install_errors'] = [
+        'description' => t("Sodium could not be installed due to missing requirements. See the module's documentation for more information."),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}

@@ -1,0 +1,15 @@
+uuid: 8f57662c-8016-4768-8d4e-26ad4674d510
+langcode: en
+status: true
+dependencies: {  }
+name: cropped_square
+label: 'Cropped square'
+effects:
+  d63fbfbb-6d2f-4f69-bc7f-44c6e4f79a10:
+    uuid: d63fbfbb-6d2f-4f69-bc7f-44c6e4f79a10
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 300
+      anchor: center-center

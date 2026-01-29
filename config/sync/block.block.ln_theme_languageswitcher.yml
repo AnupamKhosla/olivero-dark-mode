@@ -1,0 +1,28 @@
+uuid: 97854a9b-1117-4e0e-be66-d35d360b4c8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - ln_theme
+id: ln_theme_languageswitcher
+theme: ln_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: visible
+  provider: language
+visibility:
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en
+      ur: ur
