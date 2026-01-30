@@ -1,34 +1,33 @@
 # Ignore core and vendor
-/vendor/
-/web/core/
-/web/modules/contrib/
-/web/themes/contrib/
-/web/profiles/contrib/
-/web/libraries/
+# /vendor/
+# /web/core/
+# /web/modules/contrib/
+# /web/themes/contrib/
+# /web/profiles/contrib/
+# /web/libraries/
 
 # Ignore site-specific files
-/web/sites/*/settings.local.php
-/web/sites/*/files/
-/web/sites/*/private/
+# /web/sites/*/settings.local.php
+# /web/sites/*/files/
+# /web/sites/*/private/
 
 # Ignore DDEV local overrides
-.ddev/config.local.yaml
+# .ddev/config.local.yaml
 
 #env vars
-.env
-.environment 
+# .env
 
 #database files
-db*
-*.sql
-*.sqlite
-*.db
-*.dump
-.ddev/db_snapshots/
-.tarballs/
+# db*
+# *.sql
+# *.sqlite
+# *.db
+# *.dump
+# .ddev/db_snapshots/
+# .tarballs/
 
 # Platform.sh / Upsun CLI generated db files
-project.sql
-dump.sql
-*.sql.gz
-*.sql.bz2
+# project.sql
+# dump.sql
+# *.sql.gz
+# *.sql.bz2
