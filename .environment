@@ -1,5 +1,21 @@
-
+# Set database environment variables
+export DB_HOST="$MARIADB_HOST"
+export DB_PORT="$MARIADB_PORT"
+export DB_PATH="$MARIADB_PATH"
+export DB_DATABASE="$DB_PATH"
+export DB_USERNAME="$MARIADB_USERNAME"
+export DB_PASSWORD="$MARIADB_PASSWORD"
+export DB_SCHEME="$MARIADB_SCHEME"
 export DATABASE_URL="${DB_SCHEME}://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_PATH}"
+
+# Set Cache environment variables
+export CACHE_HOST="$REDIS_HOST"
+export CACHE_PORT="$REDIS_PORT"
+export CACHE_SCHEME="$REDIS_SCHEME"
+export CACHE_URL="${CACHE_SCHEME}://${CACHE_HOST}:${CACHE_PORT}"
+
+# Set Redis environment variables
+export REDIS_URL="$CACHE_URL"
 # Allow executable app dependencies from Composer to be run from the path.
 if [ -n "$PLATFORM_APP_DIR" -a -f "$PLATFORM_APP_DIR"/composer.json ] ; then
   bin=$(composer config bin-dir --working-dir="$PLATFORM_APP_DIR" --no-interaction 2>/dev/null)
@@ -9,4 +25,3 @@ fi
 # Set the URI for Drush commands.
 export PRIMARY_URL="$(echo "$PLATFORM_ROUTES" | base64 --decode | jq -r 'to_entries[] | select(.value.primary) | .key | rtrimstr("/")')"
 export DRUSH_OPTIONS_URI="$PRIMARY_URL"
-
