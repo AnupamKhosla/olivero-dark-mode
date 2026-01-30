@@ -91,7 +91,7 @@ applications:
             root: /
 services:
     db:
-        type: mariadb:11.4
+        type: mariadb:11.8
     cache:
         type: redis:8.0
 routes:
