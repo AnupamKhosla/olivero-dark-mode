@@ -11,22 +11,19 @@ database:
     version: "10.11"
 use_dns_when_possible: true
 composer_version: "2"
-# web_environment:
-#     - PLATFORM_ENVIRONMENT=dev
-#     - PLATFORM_PROJECT=7izlvla7egqey
 web_environment:
     - PLATFORM_PROJECT=7izlvla7egqey
     - PLATFORM_ENVIRONMENT=main
     - PLATFORM_ENVIRONMENT_TYPE=development
-    # Database Credentials (The Manual Fix)
     - DB_HOST=db
     - DB_PORT=3306
     - DB_USER=db
+    - DB_USERNAME=db
     - DB_PASSWORD=db
     - DB_SCHEME=mysql
     - DB_DRIVER=mysql
     - DB_NAME=db
-    # Manual bridge for .environment script logic
+    - DB_PATH=db
     - MARIADB_HOST=db
     - MARIADB_PORT=3306
     - MARIADB_USERNAME=db

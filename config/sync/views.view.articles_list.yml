@@ -1,0 +1,72 @@
+uuid: 11111111-2222-3333-4444-555555555555
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - node
+    - views
+id: articles_list
+label: 'Articles list'
+module: views
+description: 'Simple list of published articles'
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Master
+    display_plugin: default
+    position: 0
+    display_options:
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+      pager:
+        type: full
+        options:
+          items_per_page: 10
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          value: '1'
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          value:
+            article: article
+      style:
+        type: html_list
+      row:
+        type: fields
+      query:
+        type: views_query
+      sort:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          plugin_id: date
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      path: articles
