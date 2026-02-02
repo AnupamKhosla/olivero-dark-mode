@@ -7,7 +7,7 @@ docroot: web
 php_version: "8.5"
 database:
   type: mariadb
-  version: "10.11"
+  version: "11.8"
 additional_hostnames: []
 additional_fqdns: []
 web_environment:
