@@ -1,7 +1,7 @@
 name: upsun
 repository: ddev/ddev-upsun
 version: v0.3.0
-install_date: "2026-02-01T15:10:35+05:30"
+install_date: "2026-02-02T16:23:03+05:30"
 project_files:
     - upsun/install-hook.php
     - upsun/UpsunConfigParserInterface.php

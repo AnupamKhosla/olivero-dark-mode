@@ -90,8 +90,8 @@ applications:
         source:
             root: /
 services:
-    db:
-        type: mariadb:11.8
+    mariadb:
+        type: mariadb:10.11
     cache:
         type: redis:8.0
 routes:

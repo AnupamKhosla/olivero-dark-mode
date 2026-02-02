@@ -5,6 +5,9 @@
 disable_settings_management: true
 docroot: web
 php_version: "8.5"
+database:
+  type: mariadb
+  version: "10.11"
 additional_hostnames: []
 additional_fqdns: []
 web_environment:
@@ -14,15 +17,29 @@ web_environment:
 - PLATFORM_BRANCH=dev
 - PLATFORM_DOCUMENT_ROOT=/var/www/html/web
 - PLATFORM_ENVIRONMENT_TYPE=development
-- PLATFORM_PROJECT_ENTROPY=342b24bbab171ed99d0c3f6cb38850b87c86be6a3b5078a3057c7df14c0b32f1
+- PLATFORM_PROJECT_ENTROPY=37a4acc3941645bbe6de6964bee2d0e4255bf8fafdf6254daa2cbb36f8b04c12
 - PLATFORM_ROUTES=eyJodHRwczpcL1wvZHAuZGRldi5zaXRlXC8iOnsiYXR0cmlidXRlcyI6e30sImlkIjpudWxsLCJvcmlnaW5hbF91cmwiOiJodHRwczpcL1wve2FsbH1cLyIsInByaW1hcnkiOnRydWUsInByb2R1Y3Rpb25fdXJsIjoiaHR0cHM6XC9cL2RwLmRkZXYuc2l0ZVwvIiwidHlwZSI6InVwc3RyZWFtIiwidXBzdHJlYW0iOiJkcnVwYWwifX0=
 - PLATFORM_VARIABLES=W10=
 - PLATFORM_SMTP_HOST=localhost:1025
 - PLATFORM_CACHE_DIR=/mnt/ddev-global-cache/ddev-upsun/dp
-- PLATFORM_TREE_ID=2c677e46163f3e3fbcb3e196a5ee0ce2ed76f8b0
+- PLATFORM_TREE_ID=f506ade7a1120e12abe61c111da4541a4d94adfc
+- MARIADB_HOST=db
+- MARIADB_PORT=3306
+- MARIADB_PATH=db
+- MARIADB_USERNAME=db
+- MARIADB_PASSWORD=db
+- MARIADB_SCHEME=mysql
 - REDIS_HOST=redis
 - REDIS_PORT=6379
 - REDIS_SCHEME=redis
+- DB_HOST=db
+- DB_PORT=3306
+- DB_PATH=db
+- DB_DATABASE=db
+- DB_USERNAME=db
+- DB_PASSWORD=db
+- DB_SCHEME=mysql
+- DATABASE_URL=mysql://db:db@db:3306/db
 - CACHE_HOST=redis
 - CACHE_PORT=6379
 - CACHE_SCHEME=redis

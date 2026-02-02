@@ -1,7 +1,7 @@
 name: dp
 type: drupal11
 docroot: web
-php_version: "8.3"
+php_version: "8.5"
 webserver_type: nginx-fpm
 xdebug_enabled: false
 additional_hostnames: []
@@ -14,22 +14,6 @@ composer_version: "2"
 web_environment:
     - PLATFORM_PROJECT=7izlvla7egqey
     - PLATFORM_ENVIRONMENT=main
-    - PLATFORM_ENVIRONMENT_TYPE=development
-    - DB_HOST=db
-    - DB_PORT=3306
-    - DB_USER=db
-    - DB_USERNAME=db
-    - DB_PASSWORD=db
-    - DB_SCHEME=mysql
-    - DB_DRIVER=mysql
-    - DB_NAME=db
-    - DB_PATH=db
-    - MARIADB_HOST=db
-    - MARIADB_PORT=3306
-    - MARIADB_USERNAME=db
-    - MARIADB_PASSWORD=db
-    - MARIADB_SCHEME=mysql
-    - MARIADB_PATH=db
 corepack_enable: true
 
 # Key features of DDEV's config.yaml:
