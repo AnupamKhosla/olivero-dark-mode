@@ -1,0 +1,21 @@
+uuid: f3d8d3dc-22ca-4311-907a-9edb0ae054c1
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - olivero_dark_switch
+  theme:
+    - olivero
+id: olivero_oliverodarkswitch
+theme: olivero
+region: hero
+weight: 0
+provider: null
+plugin: olivero_dark_switch_block
+settings:
+  id: olivero_dark_switch_block
+  label: 'Olivero Dark Switch'
+  label_display: visible
+  provider: olivero_dark_switch
+  float: none
+visibility: {  }
