@@ -32,3 +32,6 @@ drush-backups
 .console
 /.editorconfig
 /.gitattributes
+
+#mac
+.DS_Store

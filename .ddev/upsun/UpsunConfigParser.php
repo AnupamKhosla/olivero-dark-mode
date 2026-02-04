@@ -22,7 +22,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
     {
         $this->projectRoot = rtrim($projectRoot, '/');
         $this->upsunDir = $this->projectRoot . '/.upsun';
-        
+
         if (!is_dir($this->upsunDir)) {
             throw new UpsunConfigException("Upsun configuration directory not found: {$this->upsunDir}");
         }
@@ -51,7 +51,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
         }
 
         $type = $this->appConfig['type'] ?? null;
-        
+
         if (!$type || !str_starts_with($type, 'php:')) {
             return null;
         }
@@ -69,18 +69,49 @@ class UpsunConfigParser implements UpsunConfigParserInterface
         }
 
         $relationships = $this->appConfig['relationships'] ?? [];
-        
+
         foreach ($relationships as $name => $config) {
+            // Parse string format 'service_name:endpoint' (official Upsun pattern)
+            if (is_string($config)) {
+                $parts = explode(':', $config);
+                if (count($parts) >= 2) {
+                    $serviceName = trim($parts[0]);
+                    $endpoint = trim($parts[1]);
+
+                    // Look up service by actual service name
+                    if ($this->servicesConfig && isset($this->servicesConfig[$serviceName])) {
+                        $serviceConfig = $this->servicesConfig[$serviceName];
+                        $type = $serviceConfig['type'] ?? null;
+
+                        // Check if it's a database service
+                        if ($type && (str_starts_with($type, 'mysql:') ||
+                                     str_starts_with($type, 'mariadb:') ||
+                                     str_starts_with($type, 'oracle-mysql:') ||
+                                     str_starts_with($type, 'postgresql:'))) {
+
+                            $typeParts = explode(':', $type);
+                            return [
+                                'name' => $name,
+                                'service' => $typeParts[0],
+                                'version' => $typeParts[1] ?? 'latest',
+                                'disk' => $serviceConfig['disk'] ?? null,
+                                'endpoint' => $endpoint
+                            ];
+                        }
+                    }
+                }
+            }
+
             // Check if this is a service reference (relationships can be just service names)
             if ($this->servicesConfig && isset($this->servicesConfig[$name])) {
                 $serviceConfig = $this->servicesConfig[$name];
                 $type = $serviceConfig['type'] ?? null;
-                
+
                 if ($type && (str_starts_with($type, 'mysql:') ||
                              str_starts_with($type, 'mariadb:') ||
                              str_starts_with($type, 'oracle-mysql:') ||
                              str_starts_with($type, 'postgresql:'))) {
-                    
+
                     $parts = explode(':', $type);
                     return [
                         'name' => $name,
@@ -90,17 +121,17 @@ class UpsunConfigParser implements UpsunConfigParserInterface
                     ];
                 }
             }
-            
+
             // Also check for inline relationship config with type
             if (is_array($config) && isset($config['type'])) {
                 $type = $config['type'];
-                
+
                 // Check for database services
                 if (str_starts_with($type, 'mysql:') ||
                     str_starts_with($type, 'mariadb:') ||
                     str_starts_with($type, 'oracle-mysql:') ||
                     str_starts_with($type, 'postgresql:')) {
-                    
+
                     $parts = explode(':', $type);
                     return [
                         'name' => $name,
@@ -143,14 +174,14 @@ class UpsunConfigParser implements UpsunConfigParserInterface
 
         if ($root === 'web' || $root === 'docroot') {
             // Drupal pattern
-            if (file_exists($this->projectRoot . '/web/index.php') && 
+            if (file_exists($this->projectRoot . '/web/index.php') &&
                 file_exists($this->projectRoot . '/composer.json')) {
                 return 'drupal';
             }
         }
 
         // WordPress patterns
-        if (file_exists($this->projectRoot . '/wp-config.php') || 
+        if (file_exists($this->projectRoot . '/wp-config.php') ||
             file_exists($this->projectRoot . '/web/wp-config.php')) {
             return 'wordpress';
         }
@@ -283,7 +314,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
         $webConfig = $this->getWebConfig();
         $locations = $webConfig['locations'] ?? [];
         $rootLocation = $locations['/'] ?? [];
-        
+
         return $rootLocation['root'] ?? null;
     }
 
@@ -305,7 +336,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
     private function loadAppConfig(): void
     {
         $configFile = $this->upsunDir . '/config.yaml';
-        
+
         if (!file_exists($configFile)) {
             throw new UpsunConfigException("Upsun application config file not found: {$configFile}");
         }
@@ -324,16 +355,16 @@ class UpsunConfigParser implements UpsunConfigParserInterface
         if (!isset($parsed['applications']) || !is_array($parsed['applications'])) {
             throw new UpsunConfigException("Invalid Upsun config: missing 'applications' section");
         }
-        
+
         // Take the first application config from the applications section
         $appConfigs = $parsed['applications'];
         $this->appConfig = array_values($appConfigs)[0];
-        
+
         // Store the services section if present
         if (isset($parsed['services'])) {
             $this->servicesConfig = $parsed['services'];
         }
-        
+
         // Store the application name from the key
         $appNames = array_keys($appConfigs);
         $this->appConfig['name'] = $appNames[0];
@@ -349,19 +380,19 @@ class UpsunConfigParser implements UpsunConfigParserInterface
         }
 
         $relationships = $this->appConfig['relationships'] ?? [];
-        
+
         foreach ($relationships as $relationshipName => $relationshipConfig) {
             // Handle relationship format: "redis: 'cache:redis'"
             if (is_string($relationshipConfig)) {
                 $parts = explode(':', $relationshipConfig);
                 if (count($parts) >= 2) {
-                    $serviceName = $parts[0]; // e.g., "cache" 
-                    $serviceType = $parts[1]; // e.g., "redis"
-                    
+                    $serviceName = trim($parts[0]); // e.g., "cache"
+                    $serviceType = trim($parts[1]); // e.g., "redis"
+
                     if ($serviceType === 'redis' && $this->servicesConfig && isset($this->servicesConfig[$serviceName])) {
                         $serviceConfig = $this->servicesConfig[$serviceName];
                         $type = $serviceConfig['type'] ?? null;
-                        
+
                         if ($type && str_starts_with($type, 'redis:')) {
                             $typeParts = explode(':', $type);
                             return [
@@ -374,12 +405,12 @@ class UpsunConfigParser implements UpsunConfigParserInterface
                     }
                 }
             }
-            
+
             // Handle direct service references in relationships
             if ($this->servicesConfig && isset($this->servicesConfig[$relationshipName])) {
                 $serviceConfig = $this->servicesConfig[$relationshipName];
                 $type = $serviceConfig['type'] ?? null;
-                
+
                 if ($type && str_starts_with($type, 'redis:')) {
                     $typeParts = explode(':', $type);
                     return [
@@ -391,7 +422,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
                 }
             }
         }
-        
+
         return null;
     }
 
@@ -406,7 +437,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
 
         return $this->appConfig['runtime']['extensions'] ?? [];
     }
-    
+
     /**
      * Get raw application config
      */
@@ -415,7 +446,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
         if (!$this->appConfig) {
             throw new UpsunConfigException("Configuration not parsed. Call parse() first.");
         }
-        
+
         return $this->appConfig;
     }
 
@@ -425,7 +456,7 @@ class UpsunConfigParser implements UpsunConfigParserInterface
     private function loadServicesConfig(): void
     {
         $servicesFile = $this->upsunDir . '/services.yaml';
-        
+
         if (file_exists($servicesFile)) {
             $content = file_get_contents($servicesFile);
             if ($content !== false) {
