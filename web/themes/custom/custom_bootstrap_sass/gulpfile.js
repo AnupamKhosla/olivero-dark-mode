@@ -1,6 +1,6 @@
-//Run gulp and visit yoursite.ddev.com:3001 to see changes live.
+// Run gulp and visit yoursite.ddev.com:3001 to see changes live.
 
-// Modified by Anupam khosla 5 Feb 2026 from origina barrio theme. 
+// Modified by Anupam khosla on 5 Feb 2026 from the original barrio theme. 
 
 // If you want to run Gulp  inside the docker container.
 
