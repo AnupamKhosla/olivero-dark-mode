@@ -1,0 +1,22 @@
+uuid: 5fe0e832-32f8-4ea5-8a37-f2961ce995a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_bootstrap_sass
+_core:
+  default_config_hash: YaDe8AzpDF_-TOMCsuNMqaRBwEb_vB4idrnwAcvHkhc
+id: custom_bootstrap_sass_breadcrumbs
+theme: custom_bootstrap_sass
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

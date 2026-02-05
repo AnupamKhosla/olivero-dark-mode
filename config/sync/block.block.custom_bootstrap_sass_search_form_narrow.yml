@@ -1,0 +1,23 @@
+uuid: 34550043-a575-4a85-9aa1-64a23f61b69e
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - custom_bootstrap_sass
+_core:
+  default_config_hash: ftx4xpdBCrRWyHWOpo8wGR4c5FWm5jwRzLPS33xyZjs
+id: custom_bootstrap_sass_search_form_narrow
+theme: custom_bootstrap_sass
+region: sidebar_first
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

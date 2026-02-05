@@ -49,4 +49,5 @@ theme:
   olivero: 0
   claro: 0
   bootstrap_barrio: 0
+  custom_bootstrap_sass: 0
 profile: standard

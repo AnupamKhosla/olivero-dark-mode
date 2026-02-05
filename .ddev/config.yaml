@@ -16,6 +16,16 @@ web_environment:
     - PLATFORM_ENVIRONMENT=main
 corepack_enable: true
 
+
+# If gulp needs to run from inside the container, use gulpfile_InsideDocker.js
+web_extra_exposed_ports:
+  - name: browsersync
+    container_port: 3000
+    http_port: 3000
+    https_port: 3001
+
+
+
 # Key features of DDEV's config.yaml:
 
 # name: <projectname> # Name of the project, automatically provides

@@ -1,0 +1,25 @@
+uuid: 8abf0cde-c35f-417a-8ae1-4f1569817ebc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_bootstrap_sass
+_core:
+  default_config_hash: EC6lQpjQt3DBlkaK7qhrJUhQ-ii1pQHKEoEERRbM0oM
+id: custom_bootstrap_sass_site_branding
+theme: custom_bootstrap_sass
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
