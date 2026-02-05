@@ -1,0 +1,10 @@
+uuid: 353f6344-ee49-4104-b0ef-807eb9eb6976
+langcode: en-gb
+status: true
+dependencies: {  }
+id: card_item
+label: 'Card item'
+icon_uuid: null
+icon_default: null
+description: 'Bootstrap single card item'
+behavior_plugins: {  }

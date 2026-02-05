@@ -37,7 +37,7 @@ cd /var/www/html/web/themes/custom/custom_bootstrap_sass
 
 ### Important workflow customizations:
 
-Gulp -- hide bootstrap errors: <addLinkOfBsOfficialSuggestionToIgnoreSassErrors>
+Gulp -- hide bootstrap sass errors:  https://github.com/twbs/bootstrap/issues/40962
 ```
 quietDeps: true,  // <--- ADD THIS LINE (Silences dependency warnings)
 silenceDeprecations: ['import', 'global-builtin', 'color-functions']

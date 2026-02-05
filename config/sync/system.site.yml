@@ -2,9 +2,9 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en-gb
 uuid: 64e9cf29-0e9b-44a2-8902-5754f12baa74
-name: olivero-dark-mode
+name: 'Drupal 11 Barrio Bootstrap 5 Starter'
 mail: anupamkhosla1993@gmail.com
-slogan: ''
+slogan: 'A complete Reference Implementation of the Bootstrap 5 components.'
 page:
   403: ''
   404: ''

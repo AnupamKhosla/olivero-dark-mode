@@ -1,0 +1,24 @@
+uuid: f28e2799-4fd6-46f3-880c-efaf9c9725d5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.card_item
+  module:
+    - text
+id: paragraph.card_item.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: card_item
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

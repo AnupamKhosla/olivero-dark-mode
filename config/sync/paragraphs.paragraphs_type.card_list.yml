@@ -1,0 +1,10 @@
+uuid: ed5bde4f-10ee-4f64-adad-509e9b9e962c
+langcode: en-gb
+status: true
+dependencies: {  }
+id: card_list
+label: 'Card list'
+icon_uuid: null
+icon_default: null
+description: 'row of three cards'
+behavior_plugins: {  }

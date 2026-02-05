@@ -1,0 +1,34 @@
+uuid: ccfc84a8-b33e-40e1-b610-e04ce73657a1
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.card_list
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_list
+field_name: field_list
+entity_type: node
+bundle: landing_page
+label: List
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card_list: card_list
+    negate: 0
+    target_bundles_drag_drop:
+      card_item:
+        weight: 4
+        enabled: false
+      card_list:
+        weight: 3
+        enabled: true
+field_type: entity_reference_revisions

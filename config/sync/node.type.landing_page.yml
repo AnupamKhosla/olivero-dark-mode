@@ -1,0 +1,18 @@
+uuid: 2ebbfd69-a8a6-4d8b-a65f-3db2c47e8efd
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Landing Page'
+type: landing_page
+description: 'E.g. Bootstrap homepage'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true
