@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_view_slider
+    - field.field.node.page.field_viewnative
     - node.type.page
   module:
     - text
@@ -28,4 +30,6 @@ content:
     weight: 101
     region: content
 hidden:
+  field_view_slider: true
+  field_viewnative: true
   langcode: true

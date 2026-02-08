@@ -1,11 +1,14 @@
 uuid: ade50622-c791-433c-90ea-82cc4abaaedf
-langcode: en
+langcode: en-gb
 status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_view_slider
+    - field.field.node.page.field_viewnative
     - node.type.page
   module:
+    - paragraphs
     - path
     - text
 _core:
@@ -30,6 +33,34 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_view_slider:
+    type: paragraphs
+    weight: 121
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_viewnative:
+    type: entity_reference_autocomplete
+    weight: 122
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

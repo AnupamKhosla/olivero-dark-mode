@@ -65,5 +65,7 @@ a {
 
 
 img {
-    border: 5px dotted red;
+    border: 1px dotted red;
+    max-width: 100%;
+    height: auto;
 }

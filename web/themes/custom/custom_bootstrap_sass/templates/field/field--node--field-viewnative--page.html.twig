@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Theme override for the 'field_viewnative' field.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ * - attributes: List of HTML attributes for each item.
+ * - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+  {% endif %}
+  <div class="field__items">
+    {% for delta, item in items %}
+      <div{{ item.attributes.addClass('field__item') }}>
+        
+        {# --- CUSTOM TWIG TWEAK LOGIC START --- #}
+        
+        {# 1. Get the Raw Data from the field (bypassing the default formatter) #}
+        {% set raw_item = element['#items'][delta] %}
+        
+        {# 2. Extract the View Machine Name #}
+        {% set view_machine_name = raw_item.target_id %}
+        
+        {# 3. Extract the Display ID (e.g., 'block_1'). Default to 'default' if missing. #}
+        {% set view_display_id = raw_item.display_id|default('default') %}
+
+        {# 4. Print the view using Twig Tweak #}
+        {% if view_machine_name %}
+           {{ drupal_view(view_machine_name, view_display_id) }}
+        {% endif %}
+
+        {# --- CUSTOM TWIG TWEAK LOGIC END --- #}
+
+      </div>
+    {% endfor %}
+  </div>
+</div>

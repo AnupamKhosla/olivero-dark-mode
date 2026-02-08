@@ -1,0 +1,8 @@
+uuid: ccd760f3-226c-4275-9241-5d7dd387180a
+langcode: en-gb
+status: true
+dependencies: {  }
+id: testviewblock
+label: TestViewBlock
+revision: false
+description: null

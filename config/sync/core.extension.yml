@@ -24,6 +24,8 @@ module:
   history: 0
   image: 0
   language: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   locale: 0
   menu_link_content: 0
@@ -42,9 +44,11 @@ module:
   taxonomy: 0
   text: 0
   toolbar: 0
+  twig_tweak: 0
   update: 0
   user: 0
   views_ui: 0
+  viewsreference: 0
   views: 10
   paragraphs: 11
   standard: 1000

@@ -6,26 +6,65 @@ dependencies:
     - field.field.node.landing_page.field_list
     - node.type.landing_page
   module:
-    - entity_reference_revisions
+    - layout_builder
+    - layout_discovery
+    - system
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          1a35723f-62d5-4a94-abd0-cd34d09212db:
+            uuid: 1a35723f-62d5-4a94-abd0-cd34d09212db
+            region: content
+            configuration:
+              id: 'extra_field_block:node:landing_page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          39b01d96-3a89-48cd-a964-382aea84ee44:
+            uuid: 39b01d96-3a89-48cd-a964-382aea84ee44
+            region: content
+            configuration:
+              id: 'field_block:node:landing_page:field_list'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          69afcffc-d7b7-47e1-b88c-4c328e057506:
+            uuid: 69afcffc-d7b7-47e1-b88c-4c328e057506
+            region: content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: visible
+              provider: system
+              context_mapping: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
 mode: default
-content:
-  field_list:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
-    region: content
+content: {  }
 hidden:
+  field_list: true
   langcode: true
+  links: true

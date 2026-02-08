@@ -1,0 +1,20 @@
+uuid: 942dcdf2-c228-42de-84b6-610efa2cf67e
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+    - views
+id: node.field_viewnative
+field_name: field_viewnative
+entity_type: node
+type: entity_reference
+settings:
+  target_type: view
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
-    - field.field.node.article.comment
     - field.field.node.article.field_image
+    - field.field.node.article.field_image_left
+    - field.field.node.article.field_image_right
     - field.field.node.article.field_tags
+    - field.field.node.article.field_viewtest
     - image.style.medium
     - node.type.article
   module:
@@ -52,5 +54,7 @@ content:
     weight: 100
     region: content
 hidden:
-  comment: true
+  field_image_left: true
+  field_image_right: true
+  field_viewtest: true
   langcode: true

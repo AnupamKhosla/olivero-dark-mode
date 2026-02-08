@@ -59,3 +59,9 @@
 @import "mixins";
 // barrio
 @import "barrio";
+
+
+// -------- //
+
+// import custom_bs_theme scss
+@import './scss/custom_scss/components/field.scss';

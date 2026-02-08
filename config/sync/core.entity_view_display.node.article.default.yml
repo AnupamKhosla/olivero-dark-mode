@@ -3,18 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
-    - field.field.node.article.comment
     - field.field.node.article.field_image
+    - field.field.node.article.field_image_left
+    - field.field.node.article.field_image_right
     - field.field.node.article.field_tags
-    - image.style.wide
+    - field.field.node.article.field_viewtest
     - node.type.article
   module:
-    - comment
     - image
+    - layout_builder
     - text
     - user
+    - viewsreference
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
 id: node.article.default
@@ -24,30 +29,43 @@ mode: default
 content:
   body:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 0
-    region: content
-  comment:
-    type: comment_default
-    label: above
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    weight: 110
+    weight: 5
     region: content
   field_image:
     type: image
-    label: hidden
+    label: above
     settings:
       image_link: ''
-      image_style: wide
+      image_style: ''
       image_loading:
-        attribute: eager
+        attribute: lazy
     third_party_settings: {  }
-    weight: -1
+    weight: 1
+    region: content
+  field_image_left:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image_right:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_tags:
     type: entity_reference_label
@@ -55,12 +73,30 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 4
+    region: content
+  field_viewtest:
+    type: viewsreference_formatter
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  langcode:
+    type: language
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 6
     region: content
 hidden:
-  langcode: true
+  layout_builder__layout: true

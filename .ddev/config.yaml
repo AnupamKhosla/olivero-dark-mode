@@ -12,19 +12,14 @@ database:
 use_dns_when_possible: true
 composer_version: "2"
 web_environment:
+    - PLATFORM_ENVIRONMENT=dev
     - PLATFORM_PROJECT=7izlvla7egqey
-    - PLATFORM_ENVIRONMENT=main
 corepack_enable: true
-
-
-# If gulp needs to run from inside the container, use gulpfile_InsideDocker.js
 web_extra_exposed_ports:
-  - name: browsersync
-    container_port: 3000
-    http_port: 3000
-    https_port: 3001
-
-
+    - name: browsersync
+      container_port: 3000
+      http_port: 3000
+      https_port: 3001
 
 # Key features of DDEV's config.yaml:
 

@@ -1,0 +1,39 @@
+uuid: 70724fa6-7f90-4de8-b074-d6139849d32b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_viewtest
+    - node.type.article
+  module:
+    - viewsreference
+id: node.article.field_viewtest
+field_name: field_viewtest
+entity_type: node
+bundle: article
+label: viewTest
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    default: default
+    page: page
+    block: block
+  preselect_views:
+    comment: comment
+    comments_recent: comments_recent
+    content: content
+    files: files
+    taxonomy_term: taxonomy_term
+    testview: testview
+    user_admin_people: user_admin_people
+  enabled_settings:
+    pager: pager
+field_type: viewsreference
