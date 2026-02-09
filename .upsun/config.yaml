@@ -4,6 +4,7 @@ applications:
         relationships:
             mariadb: 'db:mysql'
             redis: 'cache:redis'
+            solr: 'solr:main'
         mounts:
             # The default Drupal files directory.
             '/web/sites/default/files':
@@ -94,6 +95,23 @@ services:
         type: mariadb:11.8
     cache:
         type: redis:8.0
+    solr:
+        type: solr:9.6
+        configuration:
+            # 1. Define the Drupal ConfigSet (from your local .upsun/solr-conf/ folder)
+            configsets:
+                drupal_config: !archive "solr-conf"
+
+            # 2. Create the Core using that ConfigSet
+            cores:
+                main:
+                    core_properties: |
+                        configSet=drupal_config
+
+            # 3. Expose the Endpoint
+            endpoints:
+                main:
+                    core: main
 routes:
     "https://{default}/":
         type: upstream

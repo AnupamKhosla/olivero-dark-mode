@@ -113,6 +113,30 @@ if (getenv('PLATFORM_BRANCH')) {
   $settings['deployment_identifier'] = $settings['deployment_identifier'] ?? getenv('PLATFORM_TREE_ID');;
 }
 
+// Configure Solr connection for upsun/platformSH.
+// We check if the 'SOLR_HOST' variable exists (provided by Upsun).
+if (getenv('SOLR_HOST')) {
+  // Override the Search API Server configuration with Upsun credentials.
+  // REPLACE 'solr_server' with the actual MACHINE NAME of your server!
+  // You can find the machine name at /admin/config/search/search-api
+  $config['search_api.server.solr_dp']['backend_config']['connector_config']['host'] = getenv('SOLR_HOST');
+  $config['search_api.server.solr_dp']['backend_config']['connector_config']['port'] = getenv('SOLR_PORT');
+
+  // Handle the Core/Path split.
+  // Upsun provides "SOLR_PATH" as "solr/main".
+  // Drupal needs "main" as the core and "/" as the path.
+  $solr_path = getenv('SOLR_PATH') ?: 'solr/collection1';
+  $parts = explode('/', $solr_path);
+  $core_name = end($parts);
+
+  $config['search_api.server.solr_dp']['backend_config']['connector_config']['path'] = '/';
+  $config['search_api.server.solr_dp']['backend_config']['connector_config']['core'] = $core_name;
+}
+
+
+
+
+
 // The 'trusted_hosts_pattern' setting allows an admin to restrict the Host header values
 // that are considered trusted.  If an attacker sends a request with a custom-crafted Host
 // header then it can be an injection vector, depending on how the Host header is used.

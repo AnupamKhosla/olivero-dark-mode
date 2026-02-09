@@ -25,3 +25,15 @@ fi
 # Set the URI for Drush commands.
 export PRIMARY_URL="$(echo "$PLATFORM_ROUTES" | base64 --decode | jq -r 'to_entries[] | select(.value.primary) | .key | rtrimstr("/")')"
 export DRUSH_OPTIONS_URI="$PRIMARY_URL"
+
+
+# Set environment variables for individual credentials.
+# For more information, please visit https://docs.upsun.com/development/variables.html#service-environment-variables.
+export QUEUE_SCHEME="${SOLR_SCHEME}"
+export QUEUE_USERNAME="${SOLR_USERNAME}"
+export QUEUE_PASSWORD="${SOLR_PASSWORD}"
+export QUEUE_HOST="${SOLR_HOST}"
+export QUEUE_PORT="${SOLR_PORT}"
+
+# Set a single RabbitMQ connection string variable for AMQP.
+export AMQP_URL="${QUEUE_SCHEME}://${QUEUE_USERNAME}:${QUEUE_PASSWORD}@${QUEUE_HOST}:${QUEUE_PORT}/"
