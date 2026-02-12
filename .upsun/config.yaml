@@ -98,17 +98,10 @@ services:
     solr:
         type: solr:9.6
         configuration:
-            # 1. Define the Drupal ConfigSet (from your local .upsun/solr-conf/ folder)
-            configsets:
-                drupal_config: !archive "solr-conf"
-
-            # 2. Create the Core using that ConfigSet
             cores:
                 main:
-                    core_properties: |
-                        configSet=drupal_config
-
-            # 3. Expose the Endpoint
+                    # Mount the folder DIRECTLY to the core's face
+                    conf_dir: !archive "solr-conf"
             endpoints:
                 main:
                     core: main
