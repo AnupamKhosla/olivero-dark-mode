@@ -116,18 +116,17 @@ if (getenv('PLATFORM_BRANCH')) {
 // Configure Solr connection for upsun/platformSH.
 // We check if the 'SOLR_HOST' variable exists (provided by Upsun).
 if (getenv('SOLR_HOST')) {
-  // Override the Search API Server configuration with Upsun credentials.
-  // REPLACE 'solr_server' with the actual MACHINE NAME of your server!
-  // You can find the machine name at /admin/config/search/search-api
+  // 1. Force the Standard Connector
+  $config['search_api.server.solr_dp']['backend_config']['connector'] = 'standard';
+
+  // 2. Set Host and Port
   $config['search_api.server.solr_dp']['backend_config']['connector_config']['host'] = getenv('SOLR_HOST');
   $config['search_api.server.solr_dp']['backend_config']['connector_config']['port'] = getenv('SOLR_PORT');
 
-  // Handle the Core/Path split.
-  // Upsun provides "SOLR_PATH" as "solr/main".
-  // Drupal needs "main" as the core and "/" as the path.
-  $solr_path = getenv('SOLR_PATH') ?: 'solr/collection1';
+  // 3. Extract Core Name from Path (e.g., "solr/main" -> "main")
+  $solr_path = getenv('SOLR_PATH') ?: 'solr/main';
   $parts = explode('/', $solr_path);
-  $core_name = end($parts);
+  $core_name = end($parts); // Grabs 'main'
 
   $config['search_api.server.solr_dp']['backend_config']['connector_config']['path'] = '/';
   $config['search_api.server.solr_dp']['backend_config']['connector_config']['core'] = $core_name;
