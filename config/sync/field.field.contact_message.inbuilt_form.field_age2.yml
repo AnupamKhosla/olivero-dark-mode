@@ -1,0 +1,23 @@
+uuid: 7465be69-958b-4b15-a117-5a3226903e06
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - contact.form.inbuilt_form
+    - field.storage.contact_message.field_age2
+id: contact_message.inbuilt_form.field_age2
+field_name: field_age2
+entity_type: contact_message
+bundle: inbuilt_form
+label: Age
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

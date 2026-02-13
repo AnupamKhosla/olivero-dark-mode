@@ -32,8 +32,10 @@
         "drupal/search_api_db": "^1.40",
         "drupal/search_api_solr": "^4.3",
         "drupal/single_content_sync": "^1.4",
+        "drupal/token": "^1.17",
         "drupal/twig_tweak": "^3.4",
         "drupal/viewsreference": "^2.0@beta",
+        "drupal/webform": "^6.3@beta",
         "drush/drush": "^13.7"
     },
     "conflict": {
