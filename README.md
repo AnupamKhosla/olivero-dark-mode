@@ -35,6 +35,13 @@ ddev ssh
 cd /var/www/html/web/themes/custom/custom_bootstrap_sass
 ```
 
+Site urls:
+
+```
+https://dev-54ta5gq-7izlvla7egqey.au.platformsh.site/
+https://main-bvxea6i-7izlvla7egqey.au.platformsh.site/
+```
+
 ### Important workflow customizations:
 
 Gulp -- hide bootstrap sass errors:  https://github.com/twbs/bootstrap/issues/40962

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_formweb
     - field.field.node.page.field_view_slider
     - field.field.node.page.field_viewnative
     - node.type.page
@@ -11,6 +12,7 @@ dependencies:
     - entity_reference_revisions
     - text
     - user
+    - webform
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -24,6 +26,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 100
+    region: content
+  field_formweb:
+    type: webform_entity_reference_entity_view
+    label: above
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_view_slider:
     type: entity_reference_revisions_entity_view
@@ -48,3 +59,4 @@ content:
     region: content
 hidden:
   langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,25 @@
+uuid: 1c1cb5c5-8c4d-4541-96a8-394bfbb45123
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formweb
+    - node.type.page
+  module:
+    - webform
+id: node.page.field_formweb
+field_name: field_formweb
+entity_type: node
+bundle: page
+label: FormWeb
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

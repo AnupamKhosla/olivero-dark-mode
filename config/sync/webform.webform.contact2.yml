@@ -13,22 +13,34 @@ title: Contact2
 description: '<p>This is a test learn contact form.</p>'
 categories: {  }
 elements: |-
-  flexbox:
-    '#type': webform_flexbox
-    '#justify_content': justify-center
-    email:
-      '#type': email
-      '#title': email
-    username:
-      '#type': textfield
-      '#title': username
-    password:
-      '#type': password
-      '#title': password
-    industry:
-      '#type': select
-      '#title': Industry
-      '#options': industry
+  user_details:
+    '#type': webform_wizard_page
+    '#title': 'User details'
+    flexbox:
+      '#type': webform_flexbox
+      '#justify_content': justify-center
+      email:
+        '#type': email
+        '#title': email
+      username:
+        '#type': textfield
+        '#title': username
+      password:
+        '#type': password
+        '#title': password
+      industry:
+        '#type': select
+        '#title': Industry
+        '#options': industry
+  budget:
+    '#type': webform_wizard_page
+    '#title': Budget
+    budget_range:
+      '#type': range
+      '#title': 'Budget range'
+      '#min': 1000
+      '#max': 100000
+      '#step': 1000
 css: ''
 javascript: ''
 settings:
@@ -136,8 +148,8 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: page
   confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: Confirmation_title
+  confirmation_message: '<p>Thanks -- [webform_submission:values:username], &nbsp;your pass is [webform_submission:values:password]</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -213,5 +225,43 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: anupamkhosla1993@gmail.com
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: _default
+      body: "{# Responsive Webform Template - Validated for Drupal 11 #}\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>{{ webform.label }} Submission</title>\r\n</head>\r\n<body style=\"margin: 0; padding: 0; background-color: #f4f4f4; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\">\r\n  <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"table-layout: fixed;\">\r\n    <tr>\r\n      <td align=\"center\" style=\"padding: 20px 0;\">\r\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"max-width: 600px; background-color: #ffffff; border: 1px solid #dddddd; border-radius: 4px; overflow: hidden;\">\r\n          \r\n          {# Header Block #}\r\n          <tr>\r\n            <td style=\"background-color: #004a99; padding: 30px; text-align: center;\">\r\n              <h1 style=\"color: #ffffff; margin: 0; font-size: 22px; font-weight: bold; letter-spacing: 1px;\">\r\n                {{ webform.label }}\r\n              </h1>\r\n            </td>\r\n          </tr>\r\n\r\n          {# Intro Text #}\r\n          <tr>\r\n            <td style=\"padding: 30px 30px 10px 30px;\">\r\n              <p style=\"font-size: 16px; color: #444444; margin: 0;\">\r\n                A new submission has been received for the <strong>{{ webform.label }}</strong>.\r\n              </p>\r\n            </td>\r\n          </tr>\r\n\r\n          {# Submission Data Loop #}\r\n          <tr>\r\n            <td style=\"padding: 20px 30px;\">\r\n              <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"border-collapse: collapse;\">\r\n                {% for key, value in data %}\r\n                  {% if value is not empty %}\r\n                  <tr>\r\n                    <td width=\"35%\" style=\"padding: 12px 0; border-bottom: 1px solid #eeeeee; font-weight: bold; font-size: 14px; color: #666666; vertical-align: top;\">\r\n                      {# This fetches the human-readable label #}\r\n                      {{ webform_token('[webform:element:' ~ key ~ ':title]', webform) }}\r\n                    </td>\r\n                    <td width=\"65%\" style=\"padding: 12px 0 12px 10px; border-bottom: 1px solid #eeeeee; font-size: 15px; color: #111111; vertical-align: top; line-height: 1.5;\">\r\n                      {{ value|nl2br }}\r\n                    </td>\r\n                  </tr>\r\n                  {% endif %}\r\n                {% endfor %}\r\n              </table>\r\n            </td>\r\n          </tr>\r\n\r\n          {# Footer Metadata #}\r\n          <tr>\r\n            <td style=\"padding: 20px 30px; background-color: #fafafa; border-top: 1px solid #eeeeee;\">\r\n             <p style=\"font-size: 13px; color: #888888; margin: 0; line-height: 1.8;\">\r\n  <strong>Submitted on:</strong> {{ webform_submission.created.value|date('d/m/Y H:i') }}<br>\r\n  <strong>Source URL:</strong> {{ webform_submission.uri.value }}<br>\r\n  <strong>Remote IP:</strong> {{ webform_submission.remote_addr.value }}\r\n</p>\r\n            </td>\r\n          </tr>\r\n\r\n        </table>\r\n\r\n        {# Site Link #}\r\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"max-width: 600px;\">\r\n          <tr>\r\n            <td style=\"padding: 20px; text-align: center; font-size: 12px; color: #aaaaaa;\">\r\n              Sent from {{ webform_token('[site:name]', webform) }}\r\n            </td>\r\n          </tr>\r\n        </table>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</body>\r\n</html>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      langcode: ''
+      parameters: {  }
+      debug: false
 variants: {  }

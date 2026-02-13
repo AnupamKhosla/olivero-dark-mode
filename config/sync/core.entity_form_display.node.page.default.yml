@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_formweb
     - field.field.node.page.field_view_slider
     - field.field.node.page.field_viewnative
     - node.type.page
@@ -11,6 +12,7 @@ dependencies:
     - paragraphs
     - path
     - text
+    - webform
 _core:
   default_config_hash: MzSYzZbqqlwSM8mtLwEdCerBZRNGvHZntu5u_Gao8LY
 id: node.page.default
@@ -33,6 +35,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_formweb:
+    type: webform_entity_reference_select
+    weight: 123
+    region: content
+    settings:
+      default_data: true
+      webforms: {  }
     third_party_settings: {  }
   field_view_slider:
     type: paragraphs
